@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/85191b6578.js" crossorigin="anonymous"></script>
+    <title>To do List | JS</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>To Do List</h1>
+        <input type="text" id="input" placeholder="Add a new task">
+        <button onclick="addTask()" id="addBtn">Add</button>
+        <div class="search">
+            <input type="text" id="search" placeholder="Search for a task">
+            <button onclick="searchTask()" id="searchBtn">Search</button>
+        </div>
+        <ul id="list"></ul>
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,346 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --background-color-dark: rgb(0,2,62);
+    --background-color-light: rgb(255,255,255);
+    --size: 32em;
+    --pad: 1em;
+    --border-radius: 0.5em;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    background-color: var(--background-color-dark);
+    color: var(--background-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        padding: 1em;
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    padding: var(--pad);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-light);
+    color: rgb(0, 0, 0);
+    animation: fadeIn 1s;
+    align-items: center;
+}
+
+#input{
+    width: 100%;
+    padding: 0.5em;
+    border-radius: var(--border-radius);
+    border: none;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+#input::placeholder{
+    color: rgb(0, 0, 0);
+}
+
+#input:hover{
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+#input:focus{
+    outline: none;
+}
+
+#addBtn{
+    padding: 0.5em 1em;
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: rgb(0, 0, 0);
+    color: var(--background-color-light);
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+button:focus{
+    outline: none;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: rgb(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    animation: fadeInUp 0.5s;
+    --wrbkit-animation: fadeInUp 0.5s;
+}
+
+li:hover{
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(1em);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.deleteBtn {
+    width: 2em;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    background-color: rgb(106, 0, 0);
+}
+
+.deleteBtn:focus {
+    outline: none;
+}
+
+.notification {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: var(--border-radius);
+    margin-bottom: 1em;
+    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 2.5s;
+}
+
+.notification.success {
+    background-color: rgb(12, 255, 0);
+    color: var(--background-color-light);
+}
+
+.notification.error {
+    background-color: rgb(255, 0, 0);
+    color: var(--background-color-light);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.editBtn {
+    width: 2em;
+    margin: 0 0.5em;
+    background-color: rgb(0, 0, 255);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    background-color: rgb(0, 0, 106);
+}
+
+.editInput {
+    width: calc(100% - 4em); /* Ajustar a largura para caber no item da lista */
+    padding: 0.5em;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    margin-right: 0.5em;
+}
+
+.saveBtn {
+    background-color: rgb(0, 255, 0);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    background-color: rgb(0, 200, 0);
+}
+
+.btnContainer {
+    display: flex;
+    gap: 0.5em; /* Espaço entre os botões */
+}
+
+.editInput {
+    width: calc(100% - 4em); /* Ajustar a largura para caber no item da lista */
+    padding: 0.5em;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    margin-right: 0.5em;
+}
+
+.saveBtn {
+    background-color: rgb(0, 255, 0);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    background-color: rgb(0, 200, 0);
+}
+
+.deleteBtn, .editBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.editBtn {
+    background-color: rgb(0, 0, 255); /* Cor diferente para o botão de edição */
+}
+
+.deleteBtn:hover {
+    background-color: rgb(106, 0, 0);
+}
+
+.editBtn:hover {
+    background-color: rgb(0, 0, 106);
+}
+
+.deleteBtn:focus, .editBtn:focus {
+    outline: none;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: var(--border-radius);
+    background-color: rgb(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+}
+
+.search input {
+    width: 80%;
+    padding: 0.5em;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.search button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: rgb(0, 0, 0);
+    color: var(--background-color-light);
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.search button:focus {
+    outline: none;
+}
+
+.completeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    background-color: rgb(255, 0, 0); /* Cor inicial como vermelho */
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.completeBtn.completed {
+    background-color: rgb(0, 255, 0); /* Cor verde quando completado */
+}
+
+.completeBtn:hover {
+    background-color: rgb(200, 0, 0); /* Cor mais escura ao passar o mouse */
+}
+
+.completeBtn.completed:hover {
+    background-color: rgb(0, 200, 0); /* Cor verde mais escura ao passar o mouse */
+}
+
+.completeBtn:focus {
+    outline: none;
+}
+
+.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
